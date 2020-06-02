@@ -3,6 +3,16 @@
 
 ---
 
+Template Name: Solid
+
+Template URL: https://templatemag.com/solid-bootstrap-business-template/
+
+Author: TemplateMag.com
+
+License: https://templatemag.com/license/
+
+---
+
 + [UNDERSCORES BASED THEME](https://underscores.me)
 
 ---
