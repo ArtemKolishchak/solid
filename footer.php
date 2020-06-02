@@ -9,26 +9,63 @@
  * @package solid
  */
 
+    global $solid_option
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'solid' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'solid' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'solid' ), 'solid', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+	</div><!-- #content -->
+
+<div id="footerwrap">
+    <div class="container">
+
+	<?php if ( is_active_sidebar( 'sidebar-footer' ) ) { ?>
+
+      	<div class="row">
+       
+       		<?php dynamic_sidebar( 'sidebar-footer' ); ?>
+
+      	</div><!-- .row -->
+      	
+    <?php } ?>
+
+    </div><!-- .container -->
+  </div><!-- #footerwrap -->
+
+    <div id="copyrights">
+        <div class="container">
+        
+            <?php if($solid_option['footer-copyrights'] != ''):  ?>
+
+            <p>
+                <?php echo esc_html($solid_option['footer-copyrights']); ?>
+            </p>
+
+            <?php endif; ?>
+
+             <?php if($solid_option['created-by'] != ''):  ?>
+
+            <div class="credits">
+                <!--
+                  You are NOT allowed to delete the credit link to TemplateMag with free version.
+                  You can delete the credit link only if you bought the pro version.
+                  Buy the pro version with working PHP/AJAX contact form: https://templatemag.com/solid-bootstrap-business-template/
+                  Licensing information: https://templatemag.com/license/
+                -->
+                <p>
+                  <?php echo esc_html($solid_option['created-by']); ?>
+                </p>
+            </div><!-- .credits -->
+
+             <?php endif; ?>
+
+        </div><!-- .container -->
+    </div><!-- #copyrights -->
+    
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
 </html>
+
+
+

@@ -125,17 +125,25 @@ add_action( 'after_setup_theme', 'solid_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function solid_widgets_init() {
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'solid' ),
-			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'solid' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</section>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
+	register_sidebar( array(
+		'name'          => esc_html__( 'Sidebar', 'solid' ),
+		'id'            => 'sidebar-1',
+		'description'   => esc_html__( 'Add widgets here.', 'solid' ),
+		'before_widget' => '<section id="%1$s" class="widget %2$s">',
+		'after_widget'  => '<div class="spacing"></div></section>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4><div class="hline"></div>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Footer Sidebar', 'solid' ),
+		'id'            => 'sidebar-footer',
+		'description'   => esc_html__( 'Add widgets here.', 'solid' ),
+		'before_widget' => '<div id="%1$s" class="col-lg-4 %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4>',
+		'after_title'   => '</h4><div class="hline-w"></div>',
+	) );
 }
 add_action( 'widgets_init', 'solid_widgets_init' );
 
@@ -229,9 +237,17 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+//Theme Options
+require get_template_directory() . '/inc/theme-options.php';
+
 /**
  * Classes.
  */
 
 //Register Custom Navigation Walker
 require get_template_directory() . '/inc/classes/wp-bootstrap-navwalker.php';
+
+//Register TGM Plugin Activation
+require get_template_directory() . '/inc/init-tgm-plugin-activation.php';
+
+
