@@ -15,7 +15,20 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<!--  BLUE WRAP -->
+  	<div id="blue">
+    	<div class="container">
+      		<div class="row">
+      			<?php the_title( '<h3 class="entry-title">', '</h3>' ); ?>
+      		</div><!-- .row -->
+    	</div><!-- .container -->
+  	</div><!-- #blue -->
+
+	<!-- BLOG CONTENT -->
+  	<div class="container mtb">
+
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main">
 
 		<?php
 		while ( have_posts() ) :
@@ -31,8 +44,8 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	</main><!-- #main -->
+		</main><!-- #main -->
+	</div><!-- #primary -->
 
 <?php
-get_sidebar();
 get_footer();

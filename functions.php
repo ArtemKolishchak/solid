@@ -237,8 +237,14 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+//Register TGM Plugin Activation
+require get_template_directory() . '/inc/init-tgm-plugin-activation.php';
+
 //Theme Options
 require get_template_directory() . '/inc/theme-options.php';
+
+//ACF
+require get_template_directory() . '/inc/acf-options.php';
 
 /**
  * Classes.
@@ -247,7 +253,5 @@ require get_template_directory() . '/inc/theme-options.php';
 //Register Custom Navigation Walker
 require get_template_directory() . '/inc/classes/wp-bootstrap-navwalker.php';
 
-//Register TGM Plugin Activation
-require get_template_directory() . '/inc/init-tgm-plugin-activation.php';
 
 
