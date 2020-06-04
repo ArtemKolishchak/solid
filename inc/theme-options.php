@@ -150,3 +150,36 @@
             ),
         )
     ) );
+
+     Redux::setSection( $opt_name, array(
+        'title'            => esc_html__( 'Map', 'solid' ),
+        'id'               => 'map-section',
+        'icon'             => 'el el-map-marker',
+        'desc'             => esc_html__( 'Map Settings: ', 'solid' ),
+        'fields'           => array(
+            array(
+                'id'       => 'map-api-key',
+                'type'     => 'text',
+                'title'    => __('API Key', 'solid'),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'map-lat',
+                'type'     => 'text',
+                'title'    => __('Lat', 'solid'),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'map-lng',
+                'type'     => 'text',
+                'title'    => __('Lng', 'solid'),
+                'default'  => '',
+            ),
+            array(
+                'id'       => 'map-zoom',
+                'type'     => 'text',
+                'title'    => __('Zoom', 'solid'),
+                'default'  => '',
+            ),
+        )
+    ) );

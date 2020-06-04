@@ -175,6 +175,8 @@ add_action( 'wp_enqueue_scripts', 'solid_styles' );
  * Register and Enqueue Scripts.
  */
  function solid_scripts() {
+ 	
+ 	global $solid_option;
 
 	/*jQuery*/
     wp_deregister_script( 'jquery' );
@@ -198,6 +200,22 @@ add_action( 'wp_enqueue_scripts', 'solid_styles' );
 	
 	/*Main Javascript File*/
 	wp_enqueue_script( 'solid-main', get_template_directory_uri() . '/assets/js/main.js', array( 'jquery' ), '', true );
+
+	/*Google Maps APIs*/
+	 wp_enqueue_script( 'map-api-key', 'https://maps.googleapis.com/maps/api/js?key=' . $solid_option['map-api-key']);
+
+	/*Map*/
+	if (is_page_template('page-contact.php')) {
+		wp_enqueue_script( 'solid-map', get_template_directory_uri() . '/assets/js/map.js', array( 'jquery' ), '', true );
+	}
+
+	// Localize the script with new data
+	$map_options = array(
+    	'lat'	 => $solid_option['map-lat'],
+    	'lng'    => $solid_option['map-lng'],
+    	'zoom'   => $solid_option['map-zoom'],
+	);
+	wp_localize_script( 'solid-map', 'solid_map', $map_options );
 	
 	wp_enqueue_script( 'solid-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

@@ -566,3 +566,13 @@ csmall2 {
 body.logged-in .navbar-fixed-top {
     top: 32px;
 }
+
+/* Contact-Page */
+#blue.contact-page-blue {
+	margin-bottom: 0;
+}
+
+/* Map */
+#solid-map {
+	height: 400px;
+}
