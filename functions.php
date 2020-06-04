@@ -311,5 +311,8 @@ require get_template_directory() . '/inc/acf-options.php';
 //Register Custom Navigation Walker
 require get_template_directory() . '/inc/classes/wp-bootstrap-navwalker.php';
 
+/*Widget Recent Post*/
+require get_template_directory() . '/inc/classes/class-solid-recent-post-widget.php';
+
 
 
