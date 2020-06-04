@@ -15,42 +15,53 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<!-- Blue Wrap -->
+	<div id="blue">
+    	<div class="container">
+      		<div class="row">
+        		<h3><?php single_post_title(); ?></h3>
+      		</div><!-- .row -->  
+    	</div><!-- .container -->
+	  </div><!-- .blue -->
+	  
+	<!-- Blog Content -->
 
-		<?php
-		if ( have_posts() ) :
+	<div class="container mtb">
+    	<div class="row">
+			<div class="col-lg-8">
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
+			<?php
+				if ( have_posts() ) :
 
-			/* Start the Loop */
-			while ( have_posts() ) :
-				the_post();
+					/* Start the Loop */
+					while ( have_posts() ) :
+						the_post();
 
-				/*
-				 * Include the Post-Type-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Type name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_type() );
+						/*
+						* Include the Post-Type-specific template for the content.
+						* If you want to override this in a child theme, then include a file
+						* called content-___.php (where ___ is the Post Type name) and that will be used instead.
+						*/
+						get_template_part( 'template-parts/content', get_post_type() );
 
-			endwhile;
+					endwhile;
 
-			the_posts_navigation();
+					the_posts_navigation();
 
-		else :
+				else :
 
-			get_template_part( 'template-parts/content', 'none' );
+					get_template_part( 'template-parts/content', 'none' );
 
-		endif;
-		?>
+				endif;
+			?>
 
-	</main><!-- #main -->
+			</div><!-- .col-lg-8 -->
+
+			<!--Sidebar-->
+			<?php get_sidebar(); ?>
+
+		</div><!-- .row -->
+	</div><!-- .container .mtb -->
 
 <?php
 get_sidebar();

@@ -576,3 +576,10 @@ body.logged-in .navbar-fixed-top {
 #solid-map {
 	height: 400px;
 }
+
+/* [Read More] */
+a.more-link {
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}

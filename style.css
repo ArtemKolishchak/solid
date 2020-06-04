@@ -776,6 +776,19 @@ textarea {
 	display: block;
 }
 
+.byline,
+.author.vcard a,
+.comments-link a {
+	font-size: 12px;
+	color: #f39c12;	
+}
+
+.posted-on,
+.posted-on a {
+	font-size: 12px;
+	color: #b3b3b3;
+}
+
 /* Widgets
 --------------------------------------------- */
 .widget {
