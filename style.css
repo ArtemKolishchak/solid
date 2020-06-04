@@ -814,6 +814,10 @@ textarea {
 	padding-right: 5px;
 }
 
+.tagcloud {
+	margin-top: 10px;
+}
+
 /* Media
 --------------------------------------------- */
 .page-content .wp-smiley,
