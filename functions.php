@@ -149,6 +149,17 @@ function solid_widgets_init() {
 }
 add_action( 'widgets_init', 'solid_widgets_init' );
 
+/*Custom Categories*/
+function solid_categories($html, $args) {
+	$html = str_replace('</a> (', '</a><span class="badge badge-theme pull-right">', $html);
+	$html = str_replace(')', '</span>', $html);
+	$html = str_replace('<a href', '<i class="list-categories-arrow fa fa-angle-right"></i><a href', $html);
+
+	return $html;
+}
+
+add_filter( 'wp_list_categories', 'solid_categories', 10, 2 );
+
 /**
  * Enqueue scripts and styles.
  *

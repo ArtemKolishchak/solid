@@ -795,8 +795,23 @@ textarea {
 	margin: 0 0 1.5em;
 }
 
+.widget ul {
+	margin: 0;
+	list-style: none;
+}
+
+.widget ul li{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
 .widget select {
 	max-width: 100%;
+}
+
+.list-categories-arrow {
+	color: #428bca;
+	padding-right: 5px;
 }
 
 /* Media
